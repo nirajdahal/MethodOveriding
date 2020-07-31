@@ -1,0 +1,45 @@
+Method Overiding
+
+-Creating a method in the derived class with the same signature as a method in the base class is called as method overriding.
+-ex:
+		public abstract class Car
+                {
+                     public virtual void StartCar()
+                     {
+                                Console.WriteLine("Turn key and start");
+                     }
+                     public abstract void SetClock();
+                }
+
+
+        public class Corolla : Car
+             {
+                    public override void SetClock()
+                    {
+                        Console.WriteLine("I am setting the time in Corolla");
+                    }
+              }
+
+            public class Tesla : Car
+            {
+                    public override void StartCar()
+                    {
+                    Console.WriteLine("Think about your destination");
+                    }
+                    public override void SetClock()
+                    {
+                    Console.WriteLine("I am setting the time in Tesla");
+                    }
+            }
+
+In the example above when we write abstract void SetClock() it means it is compulsory to be implemented in derived class
+ and when we write virtual void StartCar() it may or may not be chnaged by derived class
+
+ So looking at the code above what is the difference between interface and using these techniques of abstract class?
+ Yes, they have same use cases. But abstract classes are used  when you think the method will remain same as the base class.i.e we dont have to
+ implement each method again and again like that of classes that inherits from interfaces.
+
+ Another one us we cannot asssign any access modifiers to methods or properties.
+
+
+ Pro Tip:n If you are overiding every method, maybe you just needed an interface
